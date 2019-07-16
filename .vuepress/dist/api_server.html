@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>API сервера | Документация SunEngine</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.a4476269.css" as="style"><link rel="preload" href="/assets/js/app.670d6fa9.js" as="script"><link rel="preload" href="/assets/js/2.e3984b1e.js" as="script"><link rel="preload" href="/assets/js/6.8f5773a6.js" as="script"><link rel="prefetch" href="/assets/js/10.796daae9.js"><link rel="prefetch" href="/assets/js/11.5d2a6e9f.js"><link rel="prefetch" href="/assets/js/3.aa45ae8b.js"><link rel="prefetch" href="/assets/js/4.1e2c9329.js"><link rel="prefetch" href="/assets/js/5.69ed73ad.js"><link rel="prefetch" href="/assets/js/7.151e200d.js"><link rel="prefetch" href="/assets/js/8.4830033d.js"><link rel="prefetch" href="/assets/js/9.5ca5cc40.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a4476269.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Документация SunEngine</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://sunengine.site" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Главный сайт SunEngine
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://sunengine.site" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Главный сайт SunEngine
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/about.html" class="sidebar-link">О проекте</a></li><li><a href="/installation.html" class="sidebar-link">Установка</a></li><li><a href="/configuration_server.html" class="sidebar-link">Конфигурация сервера</a></li><li><a href="/configuration_quasar.html" class="sidebar-link">Настройка клиента Quasar</a></li><li><a href="/api_server.html" class="active sidebar-link">API сервера</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/api_server.html#api-menu-getallmenuitems" class="sidebar-link">/api/Menu/GetAllMenuItems</a></li><li class="sidebar-sub-header"><a href="/api_server.html#api-materials-get" class="sidebar-link">/api/Materials/Get</a></li><li class="sidebar-sub-header"><a href="/api_server.html#api-comments-getmaterialcomments" class="sidebar-link">/api/Comments/GetMaterialComments</a></li><li class="sidebar-sub-header"><a href="/api_server.html#api-categories-getallcategoriesandaccesses" class="sidebar-link">/api/Categories/GetAllCategoriesAndAccesses</a></li></ul></li></ul> </aside> <main class="page"> <div class="content default"><h1 id="api-сервера"><a href="#api-сервера" aria-hidden="true" class="header-anchor">#</a> API сервера</h1> <h2 id="api-menu-getallmenuitems"><a href="#api-menu-getallmenuitems" aria-hidden="true" class="header-anchor">#</a> /api/Menu/GetAllMenuItems</h2> <p>Получение всех пунктов главного меню.</p> <p>Реквест:</p> <div class="language- extra-class"><pre class="language-text"><code>POST /api/Menu/GetAllMenuItems
+</code></pre></div><p>Пример респонса (c sunengine.site):</p> <div class="language- extra-class"><pre class="language-text"><code>[{
+    &quot;id&quot;: 1,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: null,
+    &quot;name&quot;: &quot;Root&quot;,
+    &quot;title&quot;: &quot;Root&quot;,
+    &quot;subTitle&quot;: null,
+    &quot;routeName&quot;: null,
+    &quot;routeParamsJson&quot;: null,
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 1,
+    &quot;icon&quot;: null,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}, {
+    &quot;id&quot;: 2,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: 1,
+    &quot;name&quot;: &quot;DocsMenu&quot;,
+    &quot;title&quot;: &quot;Документация&quot;,
+    &quot;subTitle&quot;: null,
+    &quot;routeName&quot;: null,
+    &quot;routeParamsJson&quot;: null,
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 2,
+    &quot;icon&quot;: &quot;fas fa-bars&quot;,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}, {
+    &quot;id&quot;: 12,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: 20,
+    &quot;name&quot;: null,
+    &quot;title&quot;: &quot;О проекте&quot;,
+    &quot;subTitle&quot;: null,
+    &quot;routeName&quot;: &quot;cat-Texts-mat&quot;,
+    &quot;routeParamsJson&quot;: {
+        &quot;idOrName&quot;: &quot;about&quot;
+    },
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 5,
+    &quot;icon&quot;: &quot;fas fa-info-circle&quot;,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}, {
+    &quot;id&quot;: 11,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: 2,
+    &quot;name&quot;: null,
+    &quot;title&quot;: &quot;Требования для запуска&quot;,
+    &quot;subTitle&quot;: &quot;Prerequisites&quot;,
+    &quot;routeName&quot;: &quot;articles-Docs-mat&quot;,
+    &quot;routeParamsJson&quot;: {
+        &quot;idOrName&quot;: &quot;7&quot;
+    },
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 9,
+    &quot;icon&quot;: null,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}, {
+    &quot;id&quot;: 9,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: 2,
+    &quot;name&quot;: null,
+    &quot;title&quot;: &quot;Запуск SunEngine&quot;,
+    &quot;subTitle&quot;: &quot;В development режиме&quot;,
+    &quot;routeName&quot;: &quot;articles-Docs-mat&quot;,
+    &quot;routeParamsJson&quot;: {
+        &quot;idOrName&quot;: &quot;5&quot;
+    },
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 10,
+    &quot;icon&quot;: null,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}, {
+    &quot;id&quot;: 33,
+    &quot;parent&quot;: null,
+    &quot;parentId&quot;: 2,
+    &quot;name&quot;: null,
+    &quot;title&quot;: &quot;Конфигурация&quot;,
+    &quot;subTitle&quot;: &quot;Директория конфигурации&quot;,
+    &quot;routeName&quot;: &quot;articles-Docs-mat&quot;,
+    &quot;routeParamsJson&quot;: {
+        &quot;idOrName&quot;: &quot;38&quot;
+    },
+    &quot;exact&quot;: false,
+    &quot;settingsJson&quot;: null,
+    &quot;cssClass&quot;: null,
+    &quot;externalUrl&quot;: null,
+    &quot;isSeparator&quot;: false,
+    &quot;sortNumber&quot;: 33,
+    &quot;icon&quot;: null,
+    &quot;customIcon&quot;: null,
+    &quot;isHidden&quot;: false
+}]
+</code></pre></div><h2 id="api-materials-get"><a href="#api-materials-get" aria-hidden="true" class="header-anchor">#</a> /api/Materials/Get</h2> <p>Получение материала по {id}</p> <p>Запрос:</p> <div class="language- extra-class"><pre class="language-text"><code>POST /api/Materials/Get
+
+multipart/form-data
+idOrName: {id}
+</code></pre></div><p>Пример ответа:</p> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;name&quot;: null,
+    &quot;id&quot;: 38,
+    &quot;title&quot;: &quot;Файлы конфигурации&quot;,
+    &quot;subTitle&quot;: null,
+    &quot;text&quot;: &quot;&lt;h4&gt;Использование директории конфигурации&lt;/h4&gt;&lt;div&gt;Директории конфигурации при запуске выбирается опцией config:&lt;/div&gt;&lt;div&gt;Директории конфигурации по умолчанию смотрятся в папке&amp;nbsp;&lt;i&gt;\&quot;/SunEngine/SunEngine.Cli/\&quot;, если надо использовать конфигурацию из другого места&lt;/i&gt;&amp;nbsp;- указывайте полный путь, или относительный через&lt;i&gt; \&quot;..\&quot;. &lt;/i&gt;Директория конфигурации либо &lt;i&gt;\&quot;Config\&quot;&lt;/i&gt; - по умолчанию, либо должна заканчиваться на суффикс &lt;i&gt;\&quot;.Config\&quot;&lt;/i&gt;, который автоматически добавляется к опции.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Примеры:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;dotnet SunEngine.dll server\&quot;&lt;/i&gt; - запуск с директорией по-умолчанию &lt;i&gt;\&quot;Config \&quot;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;dotnet SunEngine.dll server config:MySite&lt;/i&gt;\&quot; - запуск с директорией &lt;i&gt;\&quot;MySite.Config\&quot;&lt;/i&gt; (суффикс &lt;i&gt;\&quot;.Config\&quot;&lt;/i&gt; добавляется автоматически)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;dotnet SunEngine.dll server config:MySite.Config\&quot;&lt;/i&gt; - то же самое, &lt;i&gt;\&quot;MySite.Config\&quot;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;Команда config действует так же и для всех других для команд: &lt;i&gt;init, migrate, seed&lt;/i&gt;..., например:&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;dotnet SunEngine.dll migrate init seed config:MySite\&quot;&lt;/i&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Для того что бы ваш конфиг не перезатирался после обновления с GitHub просто скопируйте&lt;i&gt; \&quot;Config\&quot;&lt;/i&gt; в другую папку, суффикс &lt;i&gt;\&quot;.Config\&quot;&lt;/i&gt; обязателен, например &lt;i&gt;\&quot;my_site.com.Config\&quot;&lt;/i&gt;.&lt;/div&gt;&lt;div&gt;Можно использовать префикс&lt;i&gt; \&quot;local.\&quot;&lt;/i&gt; в этом случае эта папка не будет пушится в GitHub, так как приставка &lt;i&gt;\&quot;local\&quot;&lt;/i&gt; прописана в &lt;i&gt;\&quot;.gitignore\&quot;:&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;pre&gt;[Ll]ocal.*&lt;br&gt;[Ll].*&lt;/pre&gt;&lt;div&gt;&lt;span style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;Например:&lt;/span&gt;&lt;i style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt; \&quot;local.&lt;/i&gt;&lt;i style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;my_site.com.Config\&quot; &lt;/i&gt;&lt;span style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;или&lt;/span&gt;&lt;i style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;&amp;nbsp;&lt;/i&gt;&lt;i style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;&amp;nbsp;\&quot;l.&lt;/i&gt;&lt;i style=\&quot;font-family: Roboto, -apple-system, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; white-space: normal;\&quot;&gt;my_site.com.Config\&quot; .&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;h4&gt;Содержание директории конфигурации&lt;/h4&gt;&lt;/div&gt;&lt;h5&gt;Только для стартовой инициализации базы, команда init&lt;/h5&gt;&lt;div&gt;&lt;i&gt;\&quot;Categories\&quot;&lt;/i&gt; - создание и настройка категорий, только для команды init, далее на рабочем сервере категории настраиваются через админку&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;Menu\&quot;&lt;/i&gt;&amp;nbsp; - создание и настройка меню сайта, только для команды init, далее на рабочем сервере меню настраиваются через админку&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;Users.json\&quot; &lt;/i&gt;- создание пользователей для init&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;Roles.json\&quot;&lt;/i&gt; - создание ролей пользователей и их прав для init&lt;/div&gt;&lt;h5&gt;Постоянные настройки&lt;/h5&gt;&lt;div&gt;&lt;i&gt;\&quot;DataBaseConnection.json\&quot; &lt;/i&gt;- подключение к базе данных&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;\&quot;SunEngine.json\&quot; &lt;/i&gt;- основные настройки сайта&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;\&quot;Sanitizer.json\&quot;&lt;/i&gt; - настройка очистки текстов от запрещённых тегов, атрибутов, css классов, стилей css, доменов в iframe.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&quot;,
+    &quot;authorName&quot;: &quot;Dmitrij Polianin&quot;,
+    &quot;authorId&quot;: 1,
+    &quot;authorLink&quot;: &quot;1&quot;,
+    &quot;authorAvatar&quot;: &quot;67/CFUffWb3tkRlGOUGHMPp.jpg&quot;,
+    &quot;commentsCount&quot;: 0,
+    &quot;publishDate&quot;: &quot;2019-07-08T17:32:11.928288Z&quot;,
+    &quot;editDate&quot;: &quot;2019-07-09T07:46:24.451854Z&quot;,
+    &quot;categoryName&quot;: &quot;Docs&quot;,
+    &quot;isCommentsBlocked&quot;: true,
+    &quot;isHidden&quot;: false,
+    &quot;isDeleted&quot;: false,
+    &quot;tags&quot;: [&quot;config&quot;, &quot;конфигурация&quot;, &quot;настройка&quot;]
+}
+</code></pre></div><h2 id="api-comments-getmaterialcomments"><a href="#api-comments-getmaterialcomments" aria-hidden="true" class="header-anchor">#</a> /api/Comments/GetMaterialComments</h2> <p>Получение комментариев к материалу по его {id}</p> <p>Запрос:</p> <div class="language- extra-class"><pre class="language-text"><code>POST /api/Comments/GetMaterialComments
+
+multipart/form-data
+materialId: {id}
+</code></pre></div><p>Пример ответа:</p> <div class="language- extra-class"><pre class="language-text"><code>[{
+    &quot;id&quot;: 28,
+    &quot;authorId&quot;: 1,
+    &quot;authorName&quot;: &quot;Dmitrij Polianin&quot;,
+    &quot;authorLink&quot;: &quot;1&quot;,
+    &quot;authorAvatar&quot;: &quot;67/CFUffWb3tkRlGOUGHMPp.jpg&quot;,
+    &quot;text&quot;: &quot;&lt;div&gt;&lt;img class=\&quot;text-img\&quot; src=\&quot;https://sunengine.site/UploadImages/114/rOZB5jIPZ1WHsYedH95d.jpg\&quot;&gt;&lt;/div&gt;&quot;,
+    &quot;publishDate&quot;: &quot;2019-07-06T17:11:13.350622Z&quot;,
+    &quot;editDate&quot;: &quot;2019-07-06T17:11:13.350622Z&quot;,
+    &quot;isDeleted&quot;: false
+}, {
+    &quot;id&quot;: 29,
+    &quot;authorId&quot;: 1,
+    &quot;authorName&quot;: &quot;Dmitrij Polianin&quot;,
+    &quot;authorLink&quot;: &quot;1&quot;,
+    &quot;authorAvatar&quot;: &quot;67/CFUffWb3tkRlGOUGHMPp.jpg&quot;,
+    &quot;text&quot;: &quot;&lt;div&gt;&lt;img src=\&quot;https://sunengine.site/UploadImages/113/qc4MFQQ1xyEyAagS5pjI.jpg\&quot;&gt;&lt;/div&gt;&quot;,
+    &quot;publishDate&quot;: &quot;2019-07-08T16:40:29.771037Z&quot;,
+    &quot;editDate&quot;: &quot;2019-07-08T16:40:29.771037Z&quot;,
+    &quot;isDeleted&quot;: false
+}, {
+    &quot;id&quot;: 30,
+    &quot;authorId&quot;: 1,
+    &quot;authorName&quot;: &quot;Dmitrij Polianin&quot;,
+    &quot;authorLink&quot;: &quot;1&quot;,
+    &quot;authorAvatar&quot;: &quot;67/CFUffWb3tkRlGOUGHMPp.jpg&quot;,
+    &quot;text&quot;: &quot;&lt;div&gt;&lt;img src=\&quot;https://sunengine.site/UploadImages/71/GiSkHpXEVrazyuDQt7jD.jpg\&quot;&gt;&lt;/div&gt;&quot;,
+    &quot;publishDate&quot;: &quot;2019-07-08T17:48:33.844441Z&quot;,
+    &quot;editDate&quot;: &quot;2019-07-08T17:48:33.844441Z&quot;,
+    &quot;isDeleted&quot;: false
+}]
+</code></pre></div><h2 id="api-categories-getallcategoriesandaccesses"><a href="#api-categories-getallcategoriesandaccesses" aria-hidden="true" class="header-anchor">#</a> /api/Categories/GetAllCategoriesAndAccesses</h2> <p>Требуется описание.</p> <p>Запрос:</p> <div class="language- extra-class"><pre class="language-text"><code>POST /api/Categories/GetAllCategoriesAndAccesses
+</code></pre></div><p>Пример ответа:</p> <div class="language-{ extra-class"><pre class="language-text"><code>    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Root&quot;,
+    &quot;title&quot;: &quot;Root&quot;,
+    &quot;sortNumber&quot;: 1,
+    &quot;materialsSubTitleInputType&quot;: 0,
+    &quot;isMaterialsNameEditable&quot;: false,
+    &quot;isMaterialsContainer&quot;: false,
+    &quot;isHidden&quot;: false,
+    &quot;categoryPersonalAccess&quot;: {
+        &quot;materialAndCommentsRead&quot;: true
+    },
+    &quot;subCategories&quot;: [{
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Blog&quot;,
+        &quot;title&quot;: &quot;Блог&quot;,
+        &quot;sortNumber&quot;: 2,
+        &quot;layoutName&quot;: &quot;Blog&quot;,
+        &quot;materialsSubTitleInputType&quot;: 0,
+        &quot;isMaterialsNameEditable&quot;: false,
+        &quot;isMaterialsContainer&quot;: true,
+        &quot;isHidden&quot;: false,
+        &quot;categoryPersonalAccess&quot;: {
+            &quot;materialAndCommentsRead&quot;: true
+        }
+    }, {
+        &quot;id&quot;: 4,
+        &quot;name&quot;: &quot;Texts&quot;,
+        &quot;title&quot;: &quot;Тексты сайта&quot;,
+        &quot;sortNumber&quot;: 4,
+        &quot;layoutName&quot;: &quot;Articles&quot;,
+        &quot;materialsSubTitleInputType&quot;: 0,
+        &quot;isMaterialsNameEditable&quot;: true,
+        &quot;isMaterialsContainer&quot;: true,
+        &quot;isHidden&quot;: false,
+        &quot;categoryPersonalAccess&quot;: {
+            &quot;materialAndCommentsRead&quot;: true
+        }
+    }, {
+        &quot;id&quot;: 12,
+        &quot;name&quot;: &quot;SunEngine&quot;,
+        &quot;title&quot;: &quot;SunEngine&quot;,
+        &quot;sortNumber&quot;: 5,
+        &quot;materialsSubTitleInputType&quot;: 0,
+        &quot;isMaterialsNameEditable&quot;: false,
+        &quot;isMaterialsContainer&quot;: false,
+        &quot;isHidden&quot;: false,
+        &quot;categoryPersonalAccess&quot;: {
+            &quot;materialAndCommentsRead&quot;: true
+        },
+        &quot;subCategories&quot;: [{
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Docs&quot;,
+            &quot;title&quot;: &quot;Документация&quot;,
+            &quot;sortNumber&quot;: 3,
+            &quot;layoutName&quot;: &quot;Docs&quot;,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 17,
+            &quot;name&quot;: &quot;Video-SE&quot;,
+            &quot;title&quot;: &quot;Видео&quot;,
+            &quot;sortNumber&quot;: 17,
+            &quot;layoutName&quot;: &quot;Articles&quot;,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }]
+    }, {
+        &quot;id&quot;: 13,
+        &quot;name&quot;: &quot;HappyDeveloper&quot;,
+        &quot;title&quot;: &quot;Happy Developer&quot;,
+        &quot;sortNumber&quot;: 12,
+        &quot;materialsSubTitleInputType&quot;: 0,
+        &quot;isMaterialsNameEditable&quot;: false,
+        &quot;isMaterialsContainer&quot;: true,
+        &quot;isHidden&quot;: false,
+        &quot;categoryPersonalAccess&quot;: {
+            &quot;materialAndCommentsRead&quot;: true
+        },
+        &quot;subCategories&quot;: [{
+            &quot;id&quot;: 14,
+            &quot;name&quot;: &quot;Video-HD&quot;,
+            &quot;title&quot;: &quot;Видео&quot;,
+            &quot;sortNumber&quot;: 14,
+            &quot;layoutName&quot;: &quot;Articles&quot;,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 15,
+            &quot;name&quot;: &quot;Articles-HD&quot;,
+            &quot;title&quot;: &quot;Статьи&quot;,
+            &quot;sortNumber&quot;: 15,
+            &quot;layoutName&quot;: &quot;Articles&quot;,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }]
+    }, {
+        &quot;id&quot;: 5,
+        &quot;name&quot;: &quot;Forum&quot;,
+        &quot;title&quot;: &quot;Forum&quot;,
+        &quot;sortNumber&quot;: 13,
+        &quot;layoutName&quot;: &quot;Forum1&quot;,
+        &quot;materialsSubTitleInputType&quot;: 0,
+        &quot;isMaterialsNameEditable&quot;: false,
+        &quot;isMaterialsContainer&quot;: false,
+        &quot;isHidden&quot;: false,
+        &quot;categoryPersonalAccess&quot;: {
+            &quot;materialAndCommentsRead&quot;: true
+        },
+        &quot;subCategories&quot;: [{
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;General&quot;,
+            &quot;title&quot;: &quot;Основной&quot;,
+            &quot;sortNumber&quot;: 6,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 10,
+            &quot;name&quot;: &quot;UI&quot;,
+            &quot;title&quot;: &quot;Интерфейс&quot;,
+            &quot;header&quot;: &quot;&lt;div style=\&quot;text-align: center\&quot;&gt;Предложения по улучшению юзабилити и интерфейса SunEngine&lt;/div&gt;&quot;,
+            &quot;sortNumber&quot;: 7,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Q&amp;A&quot;,
+            &quot;title&quot;: &quot;Вопросы и ответы&quot;,
+            &quot;sortNumber&quot;: 8,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Help&quot;,
+            &quot;title&quot;: &quot;Помощь&quot;,
+            &quot;sortNumber&quot;: 9,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;Talk&quot;,
+            &quot;title&quot;: &quot;Общение&quot;,
+            &quot;sortNumber&quot;: 10,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }, {
+            &quot;id&quot;: 16,
+            &quot;name&quot;: &quot;HappyDeveloper-Forum&quot;,
+            &quot;title&quot;: &quot;Счастливый разработчик&quot;,
+            &quot;sortNumber&quot;: 16,
+            &quot;materialsSubTitleInputType&quot;: 0,
+            &quot;isMaterialsNameEditable&quot;: false,
+            &quot;isMaterialsContainer&quot;: true,
+            &quot;isHidden&quot;: false,
+            &quot;categoryPersonalAccess&quot;: {
+                &quot;materialAndCommentsRead&quot;: true
+            }
+        }]
+    }]
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/configuration_quasar.html" class="prev">
+          Настройка клиента Quasar
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.670d6fa9.js" defer></script><script src="/assets/js/2.e3984b1e.js" defer></script><script src="/assets/js/6.8f5773a6.js" defer></script>
+  </body>
+</html>
